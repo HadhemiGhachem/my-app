@@ -4,11 +4,8 @@ import { RegisterComponent } from './register/register.component';
 
 
 
-export const routes: Routes = [];
-
-
-const appRoutes: Routes = [
+export const routes: Routes = [
     {path: 'login', component: LoginComponent},
     {path: 'register', component: RegisterComponent}
-
 ];
+
