@@ -1,16 +1,16 @@
 import { Component  , OnInit} from '@angular/core';
-import { FormsModule , } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
+
 import * as L from "leaflet";
 
 import { LayerGroup, tileLayer  } from "leaflet";
 
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 
+
 @Component({
   selector: 'app-map',
   standalone: true,
-  imports: [ BrowserModule, FormsModule , LeafletModule ],
+  imports: [  LeafletModule  ],
   templateUrl: './map.component.html',
   styleUrl: './map.component.css'
 })

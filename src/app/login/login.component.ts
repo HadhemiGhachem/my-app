@@ -22,10 +22,6 @@ import
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
-<<<<<<< HEAD
-export class LoginComponent {
-  
-=======
 
 
 export class LoginComponent 
@@ -70,5 +66,4 @@ export class LoginComponent
 
   
 
->>>>>>> 2539c1998424edc6c178a3f2a79a93e3e35f6a45
 }
