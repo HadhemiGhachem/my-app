@@ -1,14 +1,15 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
-import { Chart, ChartData  } from 'chart.js';
+import {ChartData  } from 'chart.js';
+import Chart from 'chart.js/auto';
 
 // const color = Chart.helpers.color;
 
-const color = Chart.helpers.color;
+//const color = Chart.defaults.color;
 const data:ChartData = {
   labels:['January', 'February', 'March', 'April', 'May', 'June', 'July'],
   datasets: [{
     label:'Dataset1',
-    backgroundColor: color('green').alpha(0.5).rgbString(),
+    backgroundColor: 'green',
     borderColor: 'green',
     borderWidth: 1,
     data: [
@@ -23,7 +24,7 @@ const data:ChartData = {
 
   },{
     label: 'Dataset 2',
-    backgroundColor: color('blue').alpha(0.5).rgbString(),
+    backgroundColor: 'blue',
     borderColor: 'blue',
     borderWidth: 1,
     data: [
@@ -52,7 +53,8 @@ export class StatistiquesComponent implements AfterViewInit {
   private context : CanvasRenderingContext2D | null;
 
   ngAfterViewInit(): void {
-    this.context = (<HTMLCanvasElement>this.myCanvas.nativeElement).getContext('2d');
+   this.context = (<HTMLCanvasElement>this.myCanvas.nativeElement).getContext('2d');
+  // this.context = this.myCanvas.nativeElement.getContext('2d');
 
       if(this.context) {
         const c : Chart = new Chart(this.context, {
