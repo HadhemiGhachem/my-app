@@ -1,10 +1,49 @@
 <div class="container">
     <div class="card">
       <h2>Login</h2>
-      <form>
-        <input type="text" id="username" name="username" placeholder="Username" required>
-        <input type="password" id="password" name="password" placeholder="Password" required>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+        <input 
+        type="text" 
+        formControlName="username"
+        id="username" 
+        name="username" 
+        placeholder="Username" 
+        required
+        >
+
+        @if (submitted && f['username'].errors) {
+          <div class="invalid-feedback">
+            @if (f['username'].errors['required']) {
+            <div>username is required</div>
+            }
+          </div>
+          }
+        </div>
+        <div class="form-group">
+        <input 
+        type="password" 
+        formControlName="password"
+        id="password" 
+        name="password" 
+        placeholder="Password" 
+        required>
+        
+        @if (submitted && f['password'].errors) {
+          <div class="invalid-feedback">
+            @if (f['password'].errors['required']) {
+            <div>Password is required</div>
+            } @if (f['password'].errors['minlength']) {
+            <div>Password must be at least 6 characters</div>
+            } @if (f['password'].errors['maxlength']) {
+            <div>Username must not exceed 40 characters</div>
+            }
+          </div>
+          }
+        </div>
+
         <button type="submit">Login</button>
       </form>
     </div>
   </div>
+
